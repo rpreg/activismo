@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Comentarios y soluciones</title>
+<link rel="StyleSheet" href="comentariosysoluciones.css" type="text/css">
+<meta charset="UTF-8">
+</head>
+<body>
+<ul id="menuhorizontal">
+<li><a href="paginaprincipal.html">PAGINA PRINCIPAL</a></li>
+<li><a href="causasyconsecuencias.html">CAUSAS Y CONSECUENCIAS</a></li>
+<li><a href="estadisticasglobales.html">ESTADISTICAS GLOBALES</a></li>
+<li><a href="comentariosysoluciones.html">COMENTARIOS Y SOLUCIONES</a></li>
+</ul>
+<br>
+<br>
+<h1>SOLUCIONES</h1>
+<h3>Estas soluciones son las que nosotros pensamos que reducirían la pobreza en todo el mundo:</h3>
+<ul>
+<li>Crecimiento económico: Promover un crecimiento económico inclusivo para generar empleos sostenibles e igualdad.</li>
+ 
+<li>Distribución equitativa de recursos: Invertir en educación y desarrollo de competencias, y distribuir los recursos de manera equitativa.</li>
+ 
+<li>Protección social: Aplicar sistemas de protección social para mitigar los riesgos de los países propensos a desastres.</li> 
+ 
+<li>Acceso a servicios básicos: Promover el acceso equitativo a agua potable, saneamiento e higiene.</li>
+ 
+<li>Políticas gubernamentales: Promover mejores políticas gubernamentales e instituciones públicas justas y responsables. </li>
+ 
+<li>Apoyo a grupos marginados: Luchar contra la discriminación y apoyar a los grupos marginados. </li>
+ 
+<li>Cooperación internacional: Fomentar la cooperación internacional. </li>
+ 
+<li>Voluntariado: Realizar voluntariado o donar a una ONG.</li>
+</ul>
+<br>
+
+<h3>Ingreso de texto, botón Enviar y botón Borrar</h3> 
+<form id="commentForm">
+<p> <input type="text" id="name" name="name" placeholder= "Ingrese Nombre y Apellido" size="40" required></p>
+<p> <input type="text"  id="comment" name="comment" placeholder= "Ingrese un comentario" size="100" required></p>
+<button type="submit">Enviar</button>
+<button type="reset">Borrar</button>
+</form>
+
+  <h3>Comentarios</h3>
+  <ul id="commentList">
+    <!-- Aquí se mostrarán los comentarios -->
+  </ul>
+
+
+<script>
+    // Array para almacenar los comentarios
+    var comments = [];
+ // Obtener el formulario y agregar un evento de submit
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+      // Evitar el envío del formulario (y el recargo de la página)
+      event.preventDefault();
+ // Obtener los valores de los campos
+      var name = document.getElementById('name').value;
+      var comment = document.getElementById('comment').value;
+ if (name && comment) {
+        // Agregar el comentario al arreglo
+        comments.push({ name: name, comment: comment });
+ // Limpiar el formulario
+        document.getElementById('commentForm').reset();
+   // Limpiar la lista de comentarios
+        document.getElementById('commentList').innerHTML = '';
+  // Mostrar los comentarios actualizados
+        comments.forEach(entry => {
+          var listItem = document.createElement('li');
+          listItem.textContent = `${entry.name}: ${entry.comment}`;
+          document.getElementById('commentList').appendChild(listItem);
+        });
+      } else {
+        alert('Por favor, ingresa todos los datos.');
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
