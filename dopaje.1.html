@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Iniciando... </title>
+<meta charset="UTF-8">
+<link href="deporte.css" rel="stylesheet" type="text/css" /> 	
+</head>
+<body>
+
+    <p>Esta página ha sido visitada <span id="contador">0</span> veces.</p><div id="demotext">Dopaje en el deporte</div>
+<p>  <h1>¿QUE ES EL DOPAJE? </h1>
+    <script>
+        // Obtener el valor actual del contador desde localStorage-El dopaje es el acto de consumir sustancias artificiales, y a menudo ilícitas, con el fin de obtener una ventaja sobre los demás en las competiciones deportivas (por ejemplo, esteroides anabólicos, hormonas de crecimiento humano, estimulantes y diuréticos).
+        var contador = localStorage.getItem('contador') || 0;
+se ha prohibido su uso por los reglamentos de las organizaciones deportivas, una de las más conocidas es la AGENCIA MUNDIAL ANTIDOPAJE (AMA). Estas sustancias, al ser ingeridas, provocan un aumento artificial del rendimiento deportivo; pero con el paso del tiempo desestabilizan las funciones fisiológicas del organismo del deportista en detrimento de su salud.
+        // Convertir el valor a un número (en caso de que sea una cadena)
+        contador = parseInt(contador); </p>
+ <br>
+        // Incrementar el contador <br>
+        contador++; <br>
+ <br>
+        // Almacenar el nuevo valor en localStorage
+        localStorage.setItem('contador', contador); <img src="2da.jpg" height="150" />
+ <br>
+        // Actualizar el elemento HTML <br>
+        document.getElementById("contador").textContent = contador; <br>
+    </script> <br>
+<p> 
+
+ <h1>ALGUNOS TIPOS: </h1>
+Drogas para mejorar el rendimiento:
+Esteroides anabólicos: Utilizados para aumentar la masa muscular y la fuerza.
+Estimulantes: Como la anfetamina y la cafeína, que pueden aumentar la energía y la concentración.
+Hormonas: Como la hormona del crecimiento, que puede mejorar la recuperación y el rendimiento.
+Drogas para la recuperación:
+Analgésicos: Medicamentos que reducen el dolor, permitiendo a los atletas entrenar más intensamente.
+Antiinflamatorios: Utilizados para reducir la inflamación y acelerar la recuperación.
+Drogas para la concentración y el enfoque:
+Adderall: Un estimulante que puede mejorar la atención y el enfoque en deportes que requieren concentración.
+Drogas recreativas:
+Algunas sustancias, como la marihuana, pueden ser utilizadas por algunos atletas, aunque su uso puede estar prohibido en competiciones.
+Drogas para la pérdida de peso:
+Diuréticos: Utilizados para perder peso rápidamente, especialmente en deportes donde el peso es un factor crítico.
+. </p>
+
+<img src="dopaje.jpeg" />
+
+<br>
+<br>
+
+<br>
+<img src="4taa.jpg" height="150" />
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ </p>
+
+<h1> VIDEOS INFORMATIVOS </h1>
+
+ <h1><a href="https://www.youtube.com/watch?v=H8WpVZe14Sg"><li>VIDEO</li></a> </h1>
+<img src="7ma.jpg" height="150" />
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <h1><a href="https://www.youtube.com/watch?v=XR78DZRSwbE"><li>VIDEO</li></a> </h1>
+<img src="3ra.jpg" height="150" />
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>PAGINAS INFORMATIVAS</h1>
+<a href="https://es.scribd.com/document/245057280/Las-Drogas-en-El-Deporte "> LAS DROGAS EN EL DEPORTE </a>
+<br>
+<br>
+<a href="https://www.revistaavft.com/images/revistas/2019/avft_2_2019/1dopaje_en_deportistas.pdf "> DOPAJE EN DEPORTISTAS</a>
+<br>
+<br>
+<a href="https://centroaccion.es/como-afectan-drogas-rendimiento-deportivo/"> COMO AFECTAN DROGAS EN RENDIMIENTO DEPORTIVO </a>
+<br>
+<br>
+<a href="https://www.interpol.int/es/Delitos/Corrupcion/Lucha-contra-el-dopaje"> LUCHA CONTRA EL DOPAJE</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src="6ta.jpg" height="150" />
+<br>
+<br>
+<br>
+
+<body>
+
+  <h2>Deja tu comentario</h2>
+
+  <!-- Formulario de entrada -->
+  <form id="commentForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="comment">Comentario:</label>
+    <textarea id="comment" name="comment" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Borrar</button>
+  </form>
+
+  <h3>Comentarios</h3>
+  <ul id="commentList">
+    <!-- Aquí se mostrarán los comentarios -->
+  </ul>
+
+  <script>
+    // Array para almacenar los comentarios
+    var comments = [];
+
+    // Obtener el formulario y agregar un evento de submit
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+      // Evitar el envío del formulario (y el recargo de la página)
+      event.preventDefault();
+
+      // Obtener los valores de los campos
+      var name = document.getElementById('name').value;
+      var comment = document.getElementById('comment').value;
+
+      if (name && comment) {
+        // Agregar el comentario al arreglo
+        comments.push({ name: name, comment: comment });
+
+        // Limpiar el formulario
+        document.getElementById('commentForm').reset();
+
+        // Limpiar la lista de comentarios
+        document.getElementById('commentList').innerHTML = '';
+
+        // Mostrar los comentarios actualizados
+        comments.forEach(entry => {
+          var listItem = document.createElement('li');
+          listItem.textContent = `${entry.name}: ${entry.comment}`;
+          document.getElementById('commentList').appendChild(listItem);
+        });
+      } else {
+        alert('Por favor, ingresa todos los datos.');
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,9 @@
+body {
+	background-color: cyan;
+	/*background: linear-gradient(skyblue ; black);*/
+	color: black;
+	font-family: Verdana;
+	font-size: 14px;
+	text-align: center
+}
+

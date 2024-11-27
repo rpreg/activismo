@@ -1,0 +1,110 @@
+<!-- Maltrato animal -->
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="StyleSheet" href="maltratoanimal.css" type="text/css">
+<title> MALTRATO ANIMAL </title>
+<meta charset="UTF-8">
+</head>
+<body>
+ <p>¡Eres la persona número <span id="contador">0</span> en visitar esta página!</p>
+
+    <script>
+        // Obtener el valor actual del contador desde localStorage
+        var contador = localStorage.getItem('contador') || 0;
+
+        // Convertir el valor a un número (en caso de que sea una cadena)
+        contador = parseInt(contador);
+
+        // Incrementar el contador
+        contador++;
+
+        // Almacenar el nuevo valor en localStorage
+        localStorage.setItem('contador', contador);
+
+        // Actualizar el elemento HTML
+        document.getElementById("contador").textContent = contador;
+    </script>
+<em><h1> Maltrato animal en Uruguay </h1></em>
+<em><h1> En Uruguay existe una ley que protege la vida y el bienestar de los animales </h1></em>
+<em><p> En Uruguay hay  una Ley de protección animal que busca darles el bienestar y una buena vida a los animales. Prohíbe la caza, captura y sacrificio de animales y protege a los animales de circos, zoológicos, entre otros, y asegura que se cumplan sus necesidades básicas (que estén bien alimentados y cuidados, etc). Además, regula el uso de animales en investigaciones científicas. Le da responsabilidades a quienes tengan animales a su cargo, como mantenerlos en buenas condiciones y evitar que los abandonen. Si el abandono llega a ocurrir, la persona va a seguir siendo responsable si el animal ataca a otra persona. También se prohíbe expresamente el maltrato, la muerte innecesaria y otras conductas dañinas hacia los animales. </p></em>
+<img src="maltratoanimal.jpg"/>
+<em><p> El maltrato animal es cualquier tipo de violencia, sea psicológica o física, que una persona o medio  le ejerce a un animal. Cualquier acción que le haga sufrir a un animal (golpes, lesiones, falta de comida, abandono de la mascota, falta de cuidados sanitarios, etc.). En algunos casos, esto puede llevar a la muerte del animal.
+Hay varios tipos de maltrato animal, entre ellos el maltrato físico (golpes y heridas), el maltrato psicológico (aislamiento, miedo constante, estrés), explotación (el uso de los animales para trabajo forzado, entretenimiento, tráfico ilegal, etc), y negligencia (no alimentarlo correctamente, falta de atención médica, vivir en malas condiciones). </p></em>
+<em><h1> El maltrato animal tiene muchas causas. Algunas pueden ser: </h1></em>
+<ul>
+<li>Falta de educación sobre el respeto hacia los animales<li>
+<li>Tradiciones de algunas culturas en las que se sacrifican animales<li>
+<li>Negocio (usar a los animales como fuente de dinero)<li>
+<li>Castigo y corrección<li>
+<li>Enfermedades mentales o trastornos de comportamiento<li>
+</ul>
+<h1> Si conoces algún caso de maltrato animal, te dejamos los números telefónicos de algunos refugios que los pueden ayudar. </h1>
+<a href="Refugiosdeanimales.html"> Refugios </a>
+<em><h1> Reflecciones del grupo</h1></em>
+<em><p>En nuestra opinión, no tendríamos que necesitar crear leyes para proteger a los animales ya que nadie tendría que pensar en hacerles daño, pero lastimosamente, hay gente que lo hace, y esto lleva a la creación de estas. Muchas personas son totalmente inconscientes sobre este tema, y no se dan cuenta de la importancia que tienen los animales para nosotros.Con este proyecto, nosotras queremos concientizar a los demás sobre este problema y motivarlos a intentar ayudar o al menos tratar bien a los animales que pueden estar sufriendo maltrato, y a los animales en general.</p></em>
+
+<em><h1> Canción sobre el maltrato animal</h1></em>
+<a href="https://youtu.be/9BASKxy4Ldo?si=nND2t81T8rsn3t59" > toca aquí para escuchar<a/>
+
+  <h2>Deja aquí tu comentario sobre nuestro sitio web </h2>
+
+  <!-- Formulario de entrada -->
+  <form id="commentForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="comment">Comentario:</label>
+    <textarea id="comment" name="comment" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Borrar</button>
+  </form>
+
+  <h3>Comentarios</h3>
+  <ul id="commentList">
+    <!-- Aquí se mostrarán los comentarios -->
+  </ul>
+
+<hr><hr>
+<a href="index.html">REGRESAR A MENÚ PRINCIPAL</a>
+
+  <script>
+    // Array para almacenar los comentarios
+    var comments = [];
+
+    // Obtener el formulario y agregar un evento de submit
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+      // Evitar el envío del formulario (y el recargo de la página)
+      event.preventDefault();
+
+      // Obtener los valores de los campos
+      var name = document.getElementById('name').value;
+      var comment = document.getElementById('comment').value;
+
+      if (name && comment) {
+        // Agregar el comentario al arreglo
+        comments.push({ name: name, comment: comment });
+
+        // Limpiar el formulario
+        document.getElementById('commentForm').reset();
+
+        // Limpiar la lista de comentarios
+        document.getElementById('commentList').innerHTML = '';
+
+        // Mostrar los comentarios actualizados
+        comments.forEach(entry => {
+          var listItem = document.createElement('li');
+          listItem.textContent = `${entry.name}: ${entry.comment}`;
+          document.getElementById('commentList').appendChild(listItem);
+        });
+      } else {
+        alert('Por favor, ingresa todos los datos.');
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+

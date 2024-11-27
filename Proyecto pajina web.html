@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Contaminación Ambiental</title>
+<meta charset="UTF-8">
+<link href="contaminacionambiental.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<h1>¡Bienvenido!</h1>
+<h1>Contaminación Ambiental</h1>
+<p>
+La contaminación ambiental es uno de los desafíos más urgentes que enfrenta el mundo contemporáneo. Se refiere a la presencia de sustancias o agentes externos en el medio ambiente que provocan efectos negativos en los ecosistemas, la salud humana y el equilibrio natural. En la actualidad, la preocupación por la contaminación ambiental ha aumentado, ya que sus efectos no solo afectan al entorno natural, sino que también tienen repercusiones directas en la salud y el bienestar de las personas. La sociedad busca cada vez más formas de cuidar y preservar el medio ambiente para remediar los daños causados ​​y evitar un mayor deterioro.
+ 
+</p>
+<hr>
+<br>
+<h1><strong>Tipos de Contaminación</strong></h1>
+<ul>
+<li> Aire: Gases y partículas tóxicas que causan problemas respiratorios.</li>
+<li> Agua dulce: Contaminación de ríos y acuíferos.</li>
+<li> Suelo: Productos químicos y desperdicios que afectan la fertilidad.</li>
+<li> Marina: Plásticos y derrames de petróleo en océanos.</li>
+<li> Química: Sustancias tóxicas provenientes de la industria.</li>
+<li> Residuos: Desechos sólidos que impactan la salud y el ambiente.</li>
+</ul>
+<p> Aquí dejamos algunas imágenes de estos tipos de contminacion ambiental:
+- La primer imágen se caracteriza en la contaminación aérea.
+- La segunda imágen se ve contaminación terrestre.
+- Por último la tercer imágen es la contaminación acuática.
+</p>
+
+<img src="http://img2.rtve.es/i/?w=1600&i=1565770785054.jpg" alt="Contaminación aérea"height="200"/>
+<img src="https://tse3.mm.bing.net/th?id=OIP.-sOztA21kturTnEalJoONgHaEX&pid=Api&P=0&h=180" alt="Contaminación aérea"height="200"/>
+<img src="https://cdn.shopify.com/s/files/1/0320/3858/4453/articles/vida-marina1.jpg?v=1625860498" alt="Contaminación aérea"height="200"/>
+
+
+<br>
+<h1><strong>Causas</strong></h1>
+<h1><em>Naturales</em></h1>
+<ul>
+<li>Erupciones volcánicas: Emisión de cenizas y gases tóxicos.</li>
+<li>Incendios forestales: Liberación de CO₂ y otras partículas al aire.
+</ul>
+<h1><em>Humanas</em></h1>
+<ul>
+<li>Uso de combustibles fósiles y de plásticos.</li>
+<li>Industria y manufactura: Emisión de gases y residuos químicos.</li>
+<li>Deforestación: Pérdida de árboles que absorben CO₂ y otros contaminantes.</li>
+<li>Uso excesivo de plásticos: Contaminación del suelo y los océanos con residuos no biodegradables.</li>
+</ul> 
+<br>
+<h1>Consecuencias</h1>
+<ul>
+<li> Salud humana: Enfermedades respiratorias, cardiovasculares y cánceres.
+<li> Ecosistemas dañados: La flora y fauna sufren consecuencias debido a la degradación de sus hábitats.
+<li> Cambio climático: Las emisiones de gases de efecto invernadero, contribuyen al calentamiento global.
+<li> Debido a la absorción de Dioxide de Carbono, los océanos se vuelven mas acidos, lo que afecta los corales y la vida marina.
+</ul>
+<br>
+<h1><strong>Soluciones</strong></h1>
+<ul>
+<li> Transporte sostenible: Fomentar el uso de transporte público, bicicletas y vehículos eléctricos.
+<li> Energía sostenible: Fomentar el uso de energías limpias, como la solar, eólica y geotérmica.
+<li> Reducción y reciclaje de residuos: Implementar sistemas de reciclaje y promover la economía circular.
+<li> Regulaciónes y normativas: Imponer leyes mas estrictas sobre emisiones industriales, tratamiento de aguas residuales y gestión de desechos.
+</ul>
+<br>
+<hr>
+<h1><strong>Reflexión</strong></h1>
+<p> En general lo que nosotros pensamos es que la contaminación ambiental no solo deteriora nuestro planeta, sino también nuestra calidad de vida y la de futuras generaciones. Cada acción que tomamos, aunque sea pequeña, tiene un impacto en el entorno. Reflexionar sobre esto nos invita a asumir una responsabilidad colectiva: proteger el ambiente no es solo una opción, sino una necesidad urgente para preservar la biodiversidad y garantizar un futuro sostenible para todos.</p>
+</body>
+ <h2>Deja aqui tu comentario sobre nuestro sitio web </h2>
+
+  <!-- Formulario de entrada -->
+  <form id="commentForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="comment">Comentario:</label>
+    <textarea id="comment" name="comment" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Borrar</button>
+  </form>
+
+  <h3>Comentarios</h3>
+  <ul id="commentList">
+    <!-- Aquí se mostrarán los comentarios -->
+  </ul>
+
+<hr><hr>
+<a href="index.html">REGRESAR A MENÚ PRINCIPAL</a>
+
+  <script>
+    // Array para almacenar los comentarios
+    var comments = [];
+
+    // Obtener el formulario y agregar un evento de submit
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+      // Evitar el envío del formulario (y el recargo de la página)
+      event.preventDefault();
+
+      // Obtener los valores de los campos
+      var name = document.getElementById('name').value;
+      var comment = document.getElementById('comment').value;
+
+      if (name && comment) {
+        // Agregar el comentario al arreglo
+        comments.push({ name: name, comment: comment });
+
+        // Limpiar el formulario
+        document.getElementById('commentForm').reset();
+
+        // Limpiar la lista de comentarios
+        document.getElementById('commentList').innerHTML = '';
+
+        // Mostrar los comentarios actualizados
+        comments.forEach(entry => {
+          var listItem = document.createElement('li');
+          listItem.textContent = ${entry.name}: ${entry.comment};
+          document.getElementById('commentList').appendChild(listItem);
+        });
+      } else {
+        alert('Por favor, ingresa todos los datos.');
+      }
+    });
+  </script>
+
+</body>
+</html>
