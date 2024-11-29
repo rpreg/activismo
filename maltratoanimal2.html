@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Maltrato Animal</title>
+</head>
+<body>
+
+<h1> Maltrato animal </h1>
+
+<p> Los animales, al igual que los seres humanos, sienten dolor, miedo, felicidad y amor. Sin embargo, a pesar de que comparten muchas emociones con nosotros, son demasiados los que sufren en silencio, víctimas de la indiferencia, el abuso y la explotación. Hoy, queremos hacer un llamado a tu conciencia: ¡los animales merecen respeto!
+
+El maltrato animal no solo es cruel e inhumano, sino que también refleja una falta de empatía y de entendimiento hacia los seres vivos que comparten este planeta con nosotros. Muchas veces, no somos conscientes de la magnitud de nuestras acciones, pero cada vez que ignoramos el sufrimiento de un animal, estamos contribuyendo a un ciclo de violencia que afecta a todos. </p>
+
+<img src="imagentaller.jpg" height ="400">
+
+<h1> Casos de maltrato animal <h1>
+
+<p> 1- En cordoba, argentina un terrible video captado por una camara de seguridad muestra a un hombre maltratando cruelmente a un perro callejero. Este señor se hacia pasar por veterinario, cuando el perro ingreso a un country llamaron a este señor para que aga algo con el animal y este señor en vez de ayudarlo, agarro un palo y le pego a este pobre animal. Este señor ya tenia una denuncia previa, esto hizo que la intendencia de cordoba busque alguna sentencia para este hombre. </p>
+
+<img src="imagendemaltrato.jpg" height ="400">
+
+
+<h2>Deja tu comentario</h2>
+
+<!-- Formulario de entrada -->
+<form id="commentForm">
+<label for="name">Nombre:</label>
+<input type="text" id="name" name="name" required><br><br>
+
+<label for="comment">Comentario:</label>
+<textarea id="comment" name="comment" required></textarea><br><br>
+
+<button type="submit">Enviar</button>
+<button type="reset">Borrar</button>
+</form>
+
+<h3>Comentarios</h3>
+<ul id="commentList">
+<!-- Aquí se mostrarán los comentarios -->
+</ul>
+
+<hr><hr>
+<a href="index.html">REGRESAR A MENÚ PRINCIPAL</a>
+
+<script>
+// Array para almacenar los comentarios
+var comments = [];
+
+// Obtener el formulario y agregar un evento de submit
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+// Evitar el envío del formulario (y el recargo de la página)
+event.preventDefault();
+
+// Obtener los valores de los campos
+var name = document.getElementById('name').value;
+var comment = document.getElementById('comment').value;
+
+if (name && comment) {
+// Agregar el comentario al arreglo
+comments.push({ name: name, comment: comment });
+
+// Limpiar el formulario
+document.getElementById('commentForm').reset();
+
+// Limpiar la lista de comentarios
+document.getElementById('commentList').innerHTML = '';
+
+// Mostrar los comentarios actualizados
+comments.forEach(entry => {
+var listItem = document.createElement('li');
+listItem.textContent = ${entry.name}: ${entry.comment};
+document.getElementById('commentList').appendChild(listItem);
+});
+} else {
+alert('Por favor, ingresa todos los datos.');
+}
+});
+</script>
+
+</body>
+</html>

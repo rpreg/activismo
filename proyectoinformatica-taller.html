@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title> #nosoyinvisible </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="FORMATO1.css" type="text/css">
+    <style>
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul id="menuhorizontal">
+	<li><a href="file:///C:/Users/bregu/Downloads/informatica/barreras.html"> barreras </a></li>
+	<li><a href="file:///C:/Users/bregu/Downloads/informatica/concecuencias.html"> consecuencias</a></li>
+	<li><a href="file:///C:/Users/bregu/Downloads/informatica/comoafrontarlo.html"> afrontarlo </a></li>
+<li><a href="file:///C:/Users/bregu/Downloads/informatica/reflexion.html"> Reflexion </a></li>
+	<li><a href="file:///C:/Users/bregu/Downloads/informatica/opiniones.html"> opinion </a></li>
+
+</ul>
+<br>
+<h1> #nosoyinvisible </h1>
+	<p> La salud mental, según la Organización Mundial de la Salud (OMS) es “... un estado de bienestar mental que permite a las personas hacer frente a los momentos de estrés de la vida, desarrollar todas sus habilidades, poder aprender y trabajar adecuadamente y contribuir a la mejora de su comunidad.” Según esta organización, la salud mental no es únicamente la ausencia de trastornos mentales, sino que, es un proceso complejo que cada uno experimenta a su manera.
+ </p>
+<img src="SMA.jpg" height="250"/>
+ <br>
+    <audio id="musicaFondo" autoplay loop>
+        <source src="4.mp3" type="audio/mpeg">
+          </audio>
+
+    <button onclick="toggleMusic()">Pausar/Reproducir Música</button>
+    <p>Esta página ha sido visitada <span id="contador">0</span> veces.</p>
+
+<hr><hr>
+<a href="index.html">REGRESAR A MENÚ PRINCIPAL</a>
+
+    <script>
+  function toggleMusic() {
+            const audio = document.getElementById('musicaFondo');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+
+        // Obtener el valor actual del contador desde localStorage
+        var contador = localStorage.getItem('contador') || 0;
+        contador = parseInt(contador);
+        contador++;
+        localStorage.setItem('contador', contador);
+        document.getElementById("contador").textContent = contador;
+
+        // Obtener el valor actual del contador desde localStorage
+        var contador = localStorage.getItem('contador') || 0;
+
+        // Convertir el valor a un número (en caso de que sea una cadena)
+        contador = parseInt(contador);
+
+        // Incrementar el contador
+        contador++;
+
+        // Almacenar el nuevo valor en localStorage
+        localStorage.setItem('contador', contador);
+
+        // Actualizar el elemento HTML
+        document.getElementById("contador").textContent = contador;
+    </script>
+
+
+</body>
+</html>
+
+
+

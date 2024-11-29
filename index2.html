@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> El embarazo precoz </title>
+<link rel="stylesheet" type="text/css" href="tallercss.css"/>
+</head>
+<body>
+    <h2>¿CUÁNDO OCURRE? </h2>
+<p> El embarazo adolescente ocurre cuando ni el cuerpo ni la mente están preparados para ello. Esto sucede entre la pubertad y el final de la adolescencia, y se extiende hasta los 19 años. La mayoría de estos embarazos no son planeados, y en muchos casos son consecuencia de violencia física, psicológica o económica. Las jóvenes que acaban embarazadas a los 15 años, enfrentan un riesgo de muerte relacionado con el embarazo, parto y postparto que se duplica en comparación con mujeres mayores. </p>	
+<br>
+<img src="imagenIAembarazo2.png"  height="300"/>
+<h2>CAUSAS </h2> 
+<p> El embarazo precoz tiene varias causas, siendo una de las principales la falta de educación sexual adecuada. Cuando los adolescentes no reciben información clara sobre métodos anticonceptivos y salud reproductiva, es más probable que tomen decisiones sin conocer los riesgos. Además, la presión social y de pareja también juega un papel importante, ya que en algunos casos, los jóvenes se sienten impulsados a mantener relaciones sexuales para cumplir con expectativas de sus amigos o para satisfacer a su pareja. </p>
+<p> Además, el entorno familiar influye mucho: cuando existen problemas familiares o una falta de comunicación abierta, los adolescentes pueden buscar afecto y validación fuera del hogar, exponiéndose a situaciones de riesgo. Finalmente, la pobreza y las limitadas oportunidades también contribuyen al embarazo precoz, ya que en contextos vulnerables, los jóvenes suelen tener menos acceso a actividades educativas y recreativas, lo cual afecta sus opciones y aumenta la probabilidad de embarazos no planificados.</p>
+<br>
+<img src="imagentallerIA.jpg" height="300"/>
+<h2> ¿CÓMO PREVENIRLO?</h2>
+<p> Para prevenir el embarazo no intencional en adolescentes y promover proyectos de vida, se establecen las siguientes líneas de acción:</p>
+<ul>
+  <li><strong>Apoyo a la maternidad adolescente</strong>: Estrategias para informar a los adolescentes sobre las organizaciones de la sociedad civil que brindan apoyo a madres jóvenes, compartiendo también experiencias de madres adolescentes.</li>
+  <br>
+  <li><strong>Orientación de proyectos de vida</strong>: Se identifican oportunidades que orientarán y fortalecerán los proyectos de vida de los adolescentes, incentivando metas a futuro.</li>
+  <br>
+  <li><strong>Acceso a la anticoncepción</strong>: Se garantiza que los adolescentes tengan acceso fácil y seguro a métodos anticonceptivos.</li>
+  <br>
+  <li><strong>Material informativo en salud sexual y reproductiva</strong>: Producir material educativo sobre salud sexual y reproductiva dirigido a adolescentes y sus familias.</li>
+  <br>
+  <li><strong>Integración en la educación no formal</strong>: Desarrollar una propuesta que incorpora la educación en salud sexual y reproductiva en espacios de educación.</li>
+  <br>
+  <li><strong>Capacitación de profesionales</strong>: Se integrarán profesionales de la salud y la educación para que, a través del sistema educativo, puedan ofrecer formación en salud sexual y reproductiva a los jóvenes.</li>
+  <br>
+  <li><strong>Acceso a preservativos</strong>: Se facilitará el acceso a preservativos mediante la instalación de máquinas expendedoras en lugares frecuentados por adolescentes, promoviendo una mayor disponibilidad de estos métodos de prevención.</li>
+</ul>
+<br>    
+<h2> NUESTRA OPINIÓN</h2>
+<p>Nuestra opinión se fundamenta en la necesidad de comenzar, desde una edad temprana, a enseñar y normalizar el diálogo sobre la importancia del cuidado en las relaciones sexuales, con el fin de promover la prevención de embarazos no deseados, además de las infecciones de transmisión sexual. </p>
+<br>
+<p>En esta web encontrarás una organización que apoya a madres adolescentes en nuestro país. <a href="https://casalunas.org/">CASA LUNA</a></p>
+
+
+<br>
+<p> Este link te enviará a un video sobre un caso del embarazo adolescente: <a href="https://www.youtube.com/watch?v=TxqlT2sQuL4">TOCA AQUÍ</a></p>
+
+<h2>Deja tu comentario</h2>
+
+  <!-- Formulario de entrada -->
+  <form id="commentForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="comment">Comentario:</label>
+    <textarea id="comment" name="comment" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Borrar</button>
+  </form>
+
+  <h3>Comentarios</h3>
+  <ul id="commentList">
+    <!-- Aquí se mostrarán los comentarios -->
+  </ul>
+
+  <script>
+    // Array para almacenar los comentarios
+    var comments = [];
+
+    // Obtener el formulario y agregar un evento de submit
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+      // Evitar el envío del formulario (y el recargo de la página)
+      event.preventDefault();
+
+      // Obtener los valores de los campos
+      var name = document.getElementById('name').value;
+      var comment = document.getElementById('comment').value;
+
+      if (name && comment) {
+        // Agregar el comentario al arreglo
+        comments.push({ name: name, comment: comment });
+
+        // Limpiar el formulario
+        document.getElementById('commentForm').reset();
+
+        // Limpiar la lista de comentarios
+        document.getElementById('commentList').innerHTML = '';
+
+        // Mostrar los comentarios actualizados
+        comments.forEach(entry => {
+          var listItem = document.createElement('li');
+          listItem.textContent = `${entry.name}: ${entry.comment}`;
+          document.getElementById('commentList').appendChild(listItem);
+        });
+      } else {
+        alert('Por favor, ingresa todos los datos.');
+      }
+    });
+  </script>
+
+
+
+
+<script>
+
+</script>
+
+
+</body>
+</html>

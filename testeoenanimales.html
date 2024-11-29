@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <title>Mi página con contador</title>
+</head>
+<body>
+    <h1>¡Bienvenido!</h1>
+    <p>Esta página ha sido visitada <span id="contador">0</span> veces.</p>
+
+    <script>
+        // Obtener el valor actual del contador desde localStorage
+        var contador = localStorage.getItem('contador') || 0;
+
+        // Convertir el valor a un número (en caso de que sea una cadena)
+        contador = parseInt(contador);
+
+        // Incrementar el contador
+        contador++;
+
+        // Almacenar el nuevo valor en localStorage
+        localStorage.setItem('contador', contador);
+
+        // Actualizar el elemento HTML
+        document.getElementById("contador").textContent = contador;
+    </script>
+
+<head>
+<title> Testeo en animales</title>
+<link href="julietee.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<h1>TESTEO EN ANIMALES</h1>
+<h3>#AnimalFree</h3>
+<div class="centrar"> 
+<a href="segundapagina.html"><img src="file:///C:/Users/pc/Downloads/testeo%20en%20animales.jpg"height="300"/><p>haz click en la imagen para mas informacion!</p></a>
+</div>
+<p>Elegimos este tema ya que es un tema del que poco se habla y debería tener más peso hoy en día. Pocas marcas son las que no testean en animales. Muchas marcas de las que usualmente compramos productos utilizan a los animales para testear sus productos y nosotros no somos conscientes de eso.
+Pensamos en esta página para poder concientizar sobre el daño que les están haciendo a los animales y poder frenar con la injusticia.</p>
+
+<p>El testeo animal, a veces llamado pruebas in vivo, es un proceso para determinar si ciertos medicamentos, vacunas o cosméticos son seguros para los humanos, experimentando primero con animales.
+Estos animales son obligados a pasar por pruebas estresantes y dolorosas, también les hacen consumir “dosis letales”  de ingredientes que le pueden causar ceguera,  inflamaciones, convulsiones y en el peor de los casos la muerte.</p>
+
+<a href=https://www.youtube.com/watch?v=cmlITg5xIb0><p>Aqui un cortometraje informativo del testeo animal</p></a>
+
+ 
+<div class="centrar"> 
+ <h2>Deja tu comentario</h2>
+
+  <!-- Formulario de entrada -->
+  <form id="commentForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="comment">Comentario:</label>
+    <textarea id="comment" name="comment" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Borrar</button>
+  </form>
+
+  <h3>Comentarios</h3>
+  <ul id="commentList">
+    <!-- Aquí se mostrarán los comentarios -->
+  </ul>
+  
+  <hr><hr>
+<a href="index.html">REGRESAR A MENÚ PRINCIPAL</a>
+
+  <script>
+    // Array para almacenar los comentarios
+    var comments = [];
+
+    // Obtener el formulario y agregar un evento de submit
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+      // Evitar el envío del formulario (y el recargo de la página)
+      event.preventDefault();
+
+      // Obtener los valores de los campos
+      var name = document.getElementById('name').value;
+      var comment = document.getElementById('comment').value;
+
+      if (name && comment) {
+        // Agregar el comentario al arreglo
+        comments.push({ name: name, comment: comment });
+
+        // Limpiar el formulario
+        document.getElementById('commentForm').reset();
+
+        // Limpiar la lista de comentarios
+        document.getElementById('commentList').innerHTML = '';
+
+        // Mostrar los comentarios actualizados
+        comments.forEach(entry => {
+          var listItem = document.createElement('li');
+          listItem.textContent = `${entry.name}: ${entry.comment}`;
+          document.getElementById('commentList').appendChild(listItem);
+        });
+      } else {
+        alert('Por favor, ingresa todos los datos.');
+      }
+    });
+  </script>
+</div>
+</body>
+</html>
+
+
+

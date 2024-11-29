@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> danos tu opinion </title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="FORMATO1.css" type="text/css">
+</head>
+	<body>
+	<h1> danos tu opinion  </h1>
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">  
+  <title>Formulario de Comentarios</title>
+</head>
+<body>
+
+  <h2>Deja tu comentario</h2>
+
+  <form id="commentForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="comment">Comentario:</label>
+    <textarea id="comment" name="comment" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Borrar</button>
+  </form>
+
+  <h3>Comentarios</h3>
+  <ul id="commentList">
+    <!-- Aquí se mostrarán los comentarios -->
+  </ul>
+
+  <script>
+  
+    var comments = [];
+
+    // Obtener el formulario y agregar un evento de submit
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+      // Evitar el envío del formulario (y el recargo de la página)
+      event.preventDefault();
+
+      // Obtener los valores de los campos
+      var name = document.getElementById('name').value;
+      var comment = document.getElementById('comment').value;
+
+      if (name && comment) {
+        // Agregar el comentario al arreglo
+        comments.push({ name: name, comment: comment });
+
+        // Limpiar el formulario
+        document.getElementById('commentForm').reset();
+
+        // Limpiar la lista de comentarios
+        document.getElementById('commentList').innerHTML = '';
+
+        // Mostrar los comentarios actualizados
+        comments.forEach(entry => {
+          var listItem = document.createElement('li');
+          listItem.textContent = `${entry.name}: ${entry.comment}`;
+          document.getElementById('commentList').appendChild(listItem);
+        });
+      } else {
+        alert('Por favor, ingresa todos los datos.');
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+<a href="file:///C:/Users/bregu/Downloads/informatica/proyectoinformatica-taller.html"> <p> volver </p></a>
+</body>
+</html>
