@@ -1,0 +1,101 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: url('https://www.colegiosyliceos.uy/im/media/YTo0OntzOjI6ImlkIjtpOjgwMztzOjE6InciO2k6MzAwO3M6MToiaCI7aTozMDA7czoxOiJ0IjtzOjE5OiJtYXAtY2Fyb3VzZWwtc2xpZGVyIjt9') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Fondo con transparencia */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: -1;
+}
+
+
+/* Estilo de los encabezados */
+h1 {
+    color: #1b0bde;
+	/*color: #444;*/
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ccc;
+    display: inline-block;
+    padding-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animación para el encabezado */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Estilo de los encabezados */
+h2 {
+    color: #1b0bde;
+	/*color: #444;*/
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ccc;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Estilo de los enlaces */
+a {
+    color: #d20b29;
+	/*color: #0066cc;*/
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 0;
+    transition: color 0.3s, transform 0.2s;
+}
+
+a:hover {
+    color: #003399;
+    transform: scale(1.05);
+}
+
+/* Separadores */
+hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Centrando el contenido */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor principal */
+body > div {
+    max-width: 800px;
+    width: 90%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
